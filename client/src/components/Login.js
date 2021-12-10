@@ -36,7 +36,7 @@ export default function Login() {
         <div className='login'>
             <img/>
             <div>
-                <h2>Welcome Back</h2>
+                <h2>Welcome Back {localStorage.name ? localStorage.name : null}</h2>
                 {showLoginButton ?
                     <GoogleLogin
                         clientId={clientId}

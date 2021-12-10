@@ -70,7 +70,7 @@ window.env = {
   "LC_MEASUREMENT": "en_IN",
   "XDG_VTNR": "1",
   "XDG_SESSION_ID": "2",
-  "npm_config_user_agent": "npm/8.1.3 node/v17.1.0 linux x64 workspaces/false",
+  "npm_config_user_agent": "npm/8.1.3 node/v16.13.1 linux x64 workspaces/false",
   "npm_execpath": "/usr/lib/node_modules/npm/bin/npm-cli.js",
   "XDG_RUNTIME_DIR": "/run/user/1000",
   "npm_package_json": "/run/media/arth/New Volume/productivity-tracker/client/package.json",

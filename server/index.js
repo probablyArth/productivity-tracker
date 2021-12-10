@@ -11,13 +11,11 @@ const month = require('./routes/month');
 const target = require('./routes/month');
 const user = require('./routes/month');
 
-
 const URI = "mongodb://localhost:27017";
 
 mongoose.connect(URI, {
   dbName: 'user'
 });
-
 
 const db = mongoose.connection
 
