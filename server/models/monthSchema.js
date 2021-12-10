@@ -5,9 +5,9 @@ const monthSchema = new mongoose.Schema({
   date: Date,
   goal: String,
   unit: String,
-  expected_targets: [Number=0, Number=0, Number=0, Number=0],
-  achieved_targets: [Number=0, Number=0, Number=0, Number=0],  //List Index reperesents Week number
+  expected_targets: [{type: Number, default: 0}, {type: Number, default: 0}, {type: Number, default: 0}, {type: Number, default: 0}],
+  achieved_targets: [{type: Number, default: 0}, {type: Number, default: 0}, {type: Number, default: 0}, {type: Number, default: 0}],  //List Index reperesents Week number
   finished: Boolean
 });
 
-module.exports = monthSchema;
+// module.exports = monthSchema;
