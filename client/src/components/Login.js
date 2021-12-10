@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import env from "react-dotenv";
-import loginBack from '../assets/images/loginBack.jpg'
 
 const clientId = env.GOOGLE_CLIENT_ID
 
@@ -12,9 +11,12 @@ export default function Login() {
     const [showLogoutButton, setShowLogoutButton] = useState(false);
     
     const onLoginSuccess = (res) => {
-        console.log(res)
-        localStorage.setItem('productivityTrackerID', res.googleId)
-        console.log(localStorage.getItem('productivityTrackerID'))
+        console.log(res);
+        localStorage.setItem('googleId', res.googleId);
+        localStorage.setItem('name', res.profileObj.name);
+        localStorage.setItem('imageUrl', res.profileObj.imageUrl);
+        localStorage.setItem('email', res.profileObj.email);
+
         setShowLoginButton(false);
         setShowLogoutButton(true);
     }
