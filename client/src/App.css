@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  object-fit: cover;
+}
+
+.login img{
+  background-image: url('./assets/images/loginBack.jpg');
+  width: 50vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+.login div {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.login div h2 {
+  font-size: 5vw;
+}
+
+.login div button {
+  width: 150px;
+}
+
+.login div button span {
+  width: 500px;
+}
