@@ -3,7 +3,14 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 4000;
 const mongoose = require("mongoose");
+
 require("dotenv").config();
+
+// Import routes
+
+const month = require('./routes/month');
+const target = require('./routes/month');
+const user = require('./routes/month');
 
 const URI = "mongodb://localhost:27017/productivity-tracker";
 console.log(URI);
@@ -16,9 +23,12 @@ db.once("open", function () {
   app.listen(port, () => console.log(`App listening on port ${port}!`));
 });
 
-const todosRoutes = require("./routes/todos");
-const userRoutes = require("./routes/user");
-
 app.use(cors({origin: "http://localhost:3000"}));
 app.use(express.json());
+
+// Use Routers
+
+app.use(month);
+app.use(target);
+app.use(user);
 

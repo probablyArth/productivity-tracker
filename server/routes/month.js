@@ -30,8 +30,17 @@ router.post('/month', async (req, res) => {
         goal: goal, 
         expected_targets: expected_targets, 
         achieved_targets: achieved_targets, 
-        finished: finished};
+        finished: finished
+    };
 
+    const month = await Month.findOne({date: date, googleId: googleId}).exec();
+
+    if (month) {
+        res.json({message: "Month plan already registered"})
+    } else {
+        await Month.create(payload);
+        res.json({message: "Success"});
+    }
 
 })
 
