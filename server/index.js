@@ -19,7 +19,7 @@ mongoose.connect(URI, {
 });
 
 
-db = mongoose.connection
+const db = mongoose.connection
 
 app.use(cors({origin: "http://localhost:3000"}));
 app.use(express.json());
