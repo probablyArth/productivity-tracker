@@ -1,12 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,800;1,900&family=Road+Rage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Road+Rage&display=swap');
 /* font-family: 'Balsamiq Sans', cursive;
 font-family: 'Poppins', sans-serif;
 font-family: 'Road Rage', cursive; */
+/* font-family: 'Rajdhani', sans-serif; */
 
 * {
   margin: 0;
   padding: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input:focus {
+  outline: none
+}
+
+input {
+  border: 0px;
 }
 
 .login {
@@ -44,5 +62,131 @@ font-family: 'Road Rage', cursive; */
 
 .dashboard *{
   font-family: 'Poppins';
-  font-weight: 500;
+  font-weight: 200;
+
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.dashHead {
+  width: 100%;
+}
+ /* .dashHead img { 
+  width: 200px;
+} */
+
+.dashHead h2{
+  font-size: 5vw;
+  font-family: 'Road Rage'; 
+}
+
+.setGoals {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.monthlyGoals {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.unit {
+  margin-top: 50px;
+}
+
+.unit input {
+  padding: 20px;
+  border-radius: 12px;
+  border: 0px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+  width: 25vw;
+  margin-top: 15px;
+  font-size: 1vw;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.socials .strip {
+  display: flex;
+  margin-top: 50px;
+}
+
+.strip img {
+  padding: 15px;
+  box-shadow: 0px 3px 5px rgba(184, 184, 184, 0.42);
+  border-radius: 7px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.strip input {
+  margin-left: 1px;
+  border: 0px;
+  box-shadow: 2px 3px 5px rgba(184, 184, 184, 0.42);
+  border-radius: 7px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 10px;
+  width: 35vw;
+}
+
+.weeklyGoals {
+  margin-top: 50px;
+  text-align: right;
+}
+
+.weeks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weekUnit {
+  display: flex;
+  box-shadow: 1px 2px 5px rgba(184, 184, 184, 0.42);
+  margin-top: 40px;
+  border-radius: 7px;
+  width: fit-content;
+}
+
+.weekUnit label {
+  font-size: 2.5vw;
+  font-weight: 300;
+  padding: 10px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.weekUnit input {
+  font-size: 1.5vw;
+  width: 8vw;
+  padding: 10px;
+  padding-left: 50px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.weeklyGoals button {
+  padding: 10px 50px 10px 50px;
+  background-color: #00B860;
+  border-radius: 7px;
+  border: 0px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px rgba(184, 184, 184, 0.42);
+  font-size: 3vw;
+  margin-top: 110px;
+
 }

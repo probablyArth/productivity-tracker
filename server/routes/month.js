@@ -4,12 +4,17 @@ const monthSchema = require("../models/monthSchema");
 const router = express.Router();
 
 const Month = mongoose.model('Month', monthSchema)
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 router.get('/month', async (req, res) => {
 
-    date = req.query.date;
+    const date = req.query.date;
+    const googleId = req.query.id;
 
-    const month = await Month.findOne({date: date}).exec();
+    const actualDate = new Date(Date.parse(date))
+    const identifier = `${actualDate.getMonth()}${actualDate.getYear()}`;
+
+    const month = await Month.findOne({identifier: identifier, googleId: googleId}).exec();
 
     if (month) {
         res.json(month);
@@ -21,19 +26,24 @@ router.get('/month', async (req, res) => {
 
 router.post('/month', async (req, res) => {
     
-    const { googleId, date, unit, goal, expected_targets, achieved_targets, finished } = req.body;
+    const { googleId, date, unit, goal, expected_targets, achieved_targets, finished} = req.body;
+
+    const actualDate = new Date(Date.parse(date));
+    const identifier = `${actualDate.getMonth()}${actualDate.getYear()}`;
 
     const payload = { 
         googleId: googleId, 
-        date: date, 
+        date: actualDate,
         unit: unit, 
         goal: goal, 
         expected_targets: expected_targets, 
         achieved_targets: achieved_targets, 
-        finished: finished
+        finished: finished,
+        identifier: identifier
     };
 
-    const month = await Month.findOne({date: date, googleId: googleId}).exec();
+    const month = await Month.findOne({identifier: identifier, googleId: googleId}).exec();
+
 
     if (month) {
         res.json({message: "Month plan already registered"})

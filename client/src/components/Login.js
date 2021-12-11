@@ -43,7 +43,7 @@ export default function Login() {
                         buttonText="Sign In"
                         onSuccess={onLoginSuccess}
                         onFailure={onLoginFailure}
-                        // cookiePolicy={'single_host_origin'}
+                        cookiePolicy={'single_host_origin'}
                         isSignedIn={true}
                     /> : null }
 
