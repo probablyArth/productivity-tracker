@@ -15,6 +15,8 @@ Then I exported my postman collection
 <br>
 <img src="https://github.com/ArthThapa/productivity-tracker/blob/main/readme/json.png" />
 
+## Execution
+
 Then I created my testkube script using file and type flags to provide postman collection
 
 ```kubectl testkube scripts create --file /home/arth/desktop/productivity-tracker.postman_collection.json --type "postman/collection" --name productivity-tracker-api-test```
@@ -26,10 +28,13 @@ inside my local miniube kuberenetes cluster
 Then I simply passed my test's execution id to get the result
 `kubectl testkube scripts execution 61b5d71ad5a1bcd5bd656cfc`
 
-<img src=""https://github.com/ArthThapa/productivity-tracker/blob/main/readme/test.png" />
+<img src="https://github.com/ArthThapa/productivity-tracker/blob/main/readme/test.png" />
 
 Got a perfect score let's go!
 
+## Significance of Teskube
 
+With testkube I was easily able to test my API without any hassle in under 15 minutes instead of having to load client again and again.
+It was a very good experience it took me a while to understand testkube but once I did, I got to understand just how useful it is.
 
-
+Thanks miniKube for sponsoring the hackathon I had a good time :)
