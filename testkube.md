@@ -5,6 +5,6 @@ The Backend API is the core of Productivity Tracker, to make sure it's robust I 
 ## Setting up
 
 First I opened my postman and created a collection with following requests:
-- `GET` localhost:4000/month?date='Sun Dec 12 2021 17:13:24 GMT+0530 (India Standard Time)'&googleId='109142406117593303309'
-- `POST` localhost:4000/month
+- `GET` http://localhost:4000/month?date='Sun Dec 12 2021 17:13:24 GMT+0530 (India Standard Time)'&googleId='109142406117593303309'
+- `POST` http://localhost:4000/month
 - `POST` http://localhost:4000/target
