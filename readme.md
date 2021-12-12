@@ -22,4 +22,10 @@ Being productive is a very essential part of our life and keeping track of what 
 - A graph will be generated simultaneously so they can picturize the data easily.
 
  ## Video showcasing the project
+ https://youtu.be/kNZLqVPGYB4
  
+ ## Sponsor tools used
+- Minikube's testkube for Testing my API deployment -> https://github.com/ArthThapa/productivity-tracker/blob/main/testkube.md
+- Google cloud from Google dev library for user authentication
+- Github best practices
+- Civo for hosting my kubernetes cluster
