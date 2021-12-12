@@ -2,19 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 4000;
-const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose')
 
 // Import routes
 
 const month = require('./routes/month');
-const target = require('./routes/month');
-const user = require('./routes/month');
+const target = require('./routes/target');
 
 const URI = "mongodb://localhost:27017";
 
 mongoose.connect(URI, {
-  dbName: 'user'
+  dbName: 'productivity-tracker'
 });
 
 const db = mongoose.connection
@@ -32,4 +30,3 @@ db.once("open", function () {
 
 app.use(month);
 app.use(target);
-app.use(user);

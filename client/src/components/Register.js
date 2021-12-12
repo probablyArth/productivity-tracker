@@ -17,13 +17,15 @@ function Register(props) {
     function main() {
 
         if (isValid(goal, unit, twt, ln, targets)) {
-            postMonth({goal: goal, unit: unit, date: new Date(), expected_targets: targets, finished: false})
+            
+            postMonth({goal: goal, unit: unit, date: new Date(), expected_targets: targets, finished: false, googleId: props.googleId})
             props.setRegistered(true)
             return
         }
         setError("Please all the required fields")
     }
 
+    
     return (
             <div className='dashboard'>
             <div className="dashHead">

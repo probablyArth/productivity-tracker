@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import env from "react-dotenv";
+import { Link } from "react-router-dom";
+import dash from "../assets/images/dashboard.png"
 
 const clientId = env.GOOGLE_CLIENT_ID
 
@@ -47,13 +49,18 @@ export default function Login() {
                         isSignedIn={true}
                     /> : null }
 
-                { showLogoutButton && localStorage.productivityTrackerID ?
+                { showLogoutButton && localStorage.googleId ?
+                <>
                     <GoogleLogout
                         clientId={clientId}
                         buttonText="Sign Out"
                         onLogoutSuccess={onSignOutSuccess}
                     >
-                    </GoogleLogout> : null
+                    </GoogleLogout>
+                    
+                    <button className="Link" onClick={() => window.location.href = "/dashboard"}> Dashboard</button>
+                </>
+                     : null
                 }
             </div>
         </div>

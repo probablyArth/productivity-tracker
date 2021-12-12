@@ -9,11 +9,12 @@ const months = ["January","February","March","April","May","June","July","August
 router.get('/month', async (req, res) => {
 
     const date = req.query.date;
-    const googleId = req.query.id;
+    const googleId = req.query.googleId;
 
     const actualDate = new Date(Date.parse(date))
+    
     const identifier = `${actualDate.getMonth()}${actualDate.getYear()}`;
-
+    console.log(identifier, googleId)
     const month = await Month.findOne({identifier: identifier, googleId: googleId}).exec();
 
     if (month) {
