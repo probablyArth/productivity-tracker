@@ -33,3 +33,6 @@ Being productive is a very essential part of our life and keeping track of what 
  ## Upcoming features
  - Community leaderboard
  - Chat integration
+
+## Live Link
+ - Unfortunately google is going crazy and not accepting netlify origin and civo is taking too long to verify my card :(
