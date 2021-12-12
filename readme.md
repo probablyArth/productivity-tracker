@@ -27,7 +27,8 @@ Being productive is a very essential part of our life and keeping track of what 
  ## Sponsor tools used
 - Minikube's testkube for Testing my API deployment -> https://github.com/ArthThapa/productivity-tracker/blob/main/testkube.md
 - Google cloud from Google dev library for user authentication
-- Github best practices
+- Best use of github
+- Open source best practices
 - Civo for hosting my kubernetes cluster
 
  ## Upcoming features
