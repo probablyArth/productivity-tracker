@@ -29,3 +29,7 @@ Being productive is a very essential part of our life and keeping track of what 
 - Google cloud from Google dev library for user authentication
 - Github best practices
 - Civo for hosting my kubernetes cluster
+
+ ## Upcoming features
+ - Community leaderboard
+ - Chat integration
