@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Register from './Register';
 import Registered from './Registered';
+import env from 'react-dotenv';
+
+const base_url = env.BASE_URL
 
 function Dashboard() {
 
@@ -24,7 +27,7 @@ function Dashboard() {
             console.log(googleId)
         setGoogleId(googleId)
         setName(name)
-        const url = `http://localhost:4000/month?date=${date}&googleId=${googleId}`
+        const url = `${base_url}/month?date=${date}&googleId=${googleId}`
         setLoading(true);
         axios.get(url).then((res) => {
             if (res.data) {

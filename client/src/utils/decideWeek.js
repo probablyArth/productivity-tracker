@@ -1,8 +1,8 @@
 export default function decideWeek() {
 
     const date = new Date()
-    // var day = date.getDate();
-    var day = 31
+    var day = date.getDate();
+    // var day = 31
 
     let week = 0;
 

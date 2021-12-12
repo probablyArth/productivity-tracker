@@ -1,7 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 4000;
+
+require('dotenv').config();
+
+const port = 4000;
 const mongoose = require('mongoose')
 
 // Import routes
@@ -9,7 +12,7 @@ const mongoose = require('mongoose')
 const month = require('./routes/month');
 const target = require('./routes/target');
 
-const URI = "mongodb://localhost:27017";
+const URI = process.env.URI;
 
 mongoose.connect(URI, {
   dbName: 'productivity-tracker'
@@ -17,7 +20,7 @@ mongoose.connect(URI, {
 
 const db = mongoose.connection
 
-app.use(cors({origin: "http://localhost:3000"}));
+app.use(cors({origin: '*'}));
 app.use(express.json());
 
 db.once("open", function () {

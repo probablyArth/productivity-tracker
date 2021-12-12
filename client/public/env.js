@@ -2,7 +2,7 @@ window.env = {
   "SHELL": "/bin/bash",
   "npm_command": "start",
   "SESSION_MANAGER": "local/hecker:@/tmp/.ICE-unix/3206,unix/hecker:/tmp/.ICE-unix/3206",
-  "WINDOWID": "71303175",
+  "WINDOWID": "119537671",
   "npm_config_userconfig": "/home/arth/.npmrc",
   "COLORTERM": "truecolor",
   "XDG_CONFIG_DIRS": "/home/arth/.config/kdedefaults:/etc/xdg",
@@ -14,7 +14,7 @@ window.env = {
   "LC_ADDRESS": "en_IN",
   "LC_NAME": "en_IN",
   "BREAKPAD_DUMP_LOCATION": "/home/arth/.config/Code - OSS/exthost Crash Reports",
-  "SHELL_SESSION_ID": "e1e97e54d8b44944aa09dd9f3329cd9c",
+  "SHELL_SESSION_ID": "7a6b8c4cb50a410c91cc8cf643330a4f",
   "COLOR": "1",
   "npm_config_local_prefix": "/run/media/arth/New Volume/productivity-tracker/client",
   "DESKTOP_SESSION": "plasma",
@@ -41,7 +41,7 @@ window.env = {
   "LC_PAPER": "en_IN",
   "LANG": "en_GB.UTF-8",
   "XDG_CURRENT_DESKTOP": "KDE",
-  "KONSOLE_DBUS_SERVICE": ":1.76",
+  "KONSOLE_DBUS_SERVICE": ":1.5908",
   "npm_package_version": "0.1.0",
   "KONSOLE_DBUS_SESSION": "/Sessions/1",
   "PROFILEHOME": "/run/media/arth/New Volume/productivity-tracker",
@@ -95,5 +95,6 @@ window.env = {
   "TERM_PROGRAM": "vscode",
   "KONSOLE_DBUS_WINDOW": "/Windows/1",
   "_": "/run/media/arth/New Volume/productivity-tracker/client/node_modules/.bin/react-dotenv",
-  "GOOGLE_CLIENT_ID": "603171881679-kmds25ro4d8nn2d2kb3as5ocvf0422v4.apps.googleusercontent.com"
+  "GOOGLE_CLIENT_ID": "603171881679-kmds25ro4d8nn2d2kb3as5ocvf0422v4.apps.googleusercontent.com",
+  "BASE_URL": "http://localhost:4000"
 };

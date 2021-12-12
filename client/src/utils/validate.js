@@ -1,4 +1,4 @@
-export default function isValid(goal, unit, twt, ln, targets) {
+export default function isValid(goal, targets) {
     
     for (let i in targets) {
         if (!i) {
@@ -6,7 +6,7 @@ export default function isValid(goal, unit, twt, ln, targets) {
         }
     }
 
-    if (!(goal && unit && twt && ln)) {
+    if (!(goal && targets)) {
         return false
     } 
     return true

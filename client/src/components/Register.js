@@ -8,21 +8,18 @@ import postMonth from "../utils/postMonth";
 function Register(props) {
 
     const [goal, setGoal] = useState('');
-    const [unit, setUnit] = useState('');
-    const [twt, setTwt] = useState('');
-    const [ln, setLn] = useState('');
     const [targets, setTargets] = useState([0, 0, 0, 0]);
     const [error, setError] = useState('');
 
     function main() {
 
-        if (isValid(goal, unit, twt, ln, targets)) {
+        if (isValid(goal, targets)) {
             
-            postMonth({goal: goal, unit: unit, date: new Date(), expected_targets: targets, finished: false, googleId: props.googleId})
+            postMonth({goal: goal, date: new Date(), expected_targets: targets, googleId: props.googleId})
             props.setRegistered(true)
             return
         }
-        setError("Please all the required fields")
+        setError("Please fill all the required fields")
     }
 
     
@@ -37,21 +34,6 @@ function Register(props) {
                     <h1>Set a goal for this month</h1>
                     <input placeholder={"50 hours of guitar"} onChange={(e) => {setGoal(e.target.value)}}></input>
                 </div>
-                <div className="unit">
-                    <h1>Unit of activity</h1>
-                    <input placeholder={"50 hours of guitar, hours is the unit here"} onChange={(e) => {setUnit(e.target.value)}}></input>
-                </div>
-                <div className="socials">
-                    <h1>Connect your socials</h1>
-                    <div className="strip">
-                        <img src={twitter}/>
-                        <input onChange={(e) => setTwt(e.target.value)}/> 
-                    </div>
-                    <div className="strip">
-                        <img src={linkedin} />
-                        <input onChange={(e) => setLn(e.target.value)}/> 
-                    </div>
-                </div>
                 </div>
                 <div className="weeklyGoals">
                     <h1>Set weekly Goals</h1>
@@ -61,7 +43,7 @@ function Register(props) {
                             <input type="number" onChange={(e) => {
 
                                 const newArr = [...targets];
-                                newArr[0] = e.target.value;
+                                newArr[0] = parseInt(e.target.value);
                                 setTargets(newArr);
 
                             }}/>
@@ -71,7 +53,7 @@ function Register(props) {
                             <input type="number" onChange={(e) => {
                                 
                                 const newArr = [...targets];
-                                newArr[1] = e.target.value;
+                                newArr[1] = parseInt(e.target.value);
                                 setTargets(newArr);
 
                             }}/>
@@ -81,7 +63,7 @@ function Register(props) {
                             <input type="number" onChange={(e) => {
                                 
                                 const newArr = [...targets];
-                                newArr[2] = e.target.value;
+                                newArr[2] = parseInt(e.target.value);
                                 setTargets(newArr);
 
                             }}/>
@@ -91,12 +73,15 @@ function Register(props) {
                             <input type="number" onChange={(e) => {
                                 
                                 const newArr = [...targets];
-                                newArr[3] = e.target.value;
+                                newArr[3] = parseInt(e.target.value);
                                 setTargets(newArr);
 
                             }}/>
                         </div>
-                        <button onClick={() => main()}>Let's GO</button>
+                        <div className="error">
+                            {error ? error : null}
+                            <button onClick={() => main()}>Let's GO</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,6 @@ export default function Chart({data}) {
     }
     }
 
-    console.log(chartData)
 
     return (
         <ResponsiveContainer width="50%" aspect={2}>

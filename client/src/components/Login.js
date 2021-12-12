@@ -31,7 +31,8 @@ export default function Login() {
         alert("Successfully logged out");
         setShowLoginButton(true);
         setShowLogoutButton(false);
-        localStorage.clear()    
+        localStorage.clear()
+        window.location.reload()   
     }
 
     return (

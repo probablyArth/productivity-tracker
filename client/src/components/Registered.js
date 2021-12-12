@@ -1,9 +1,12 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import decideWeek from '../utils/decideWeek';
 import check from "../assets/images/check.svg"
 import update from "../assets/images/update.svg";
 import axios from 'axios';
 import Chart from './Chart';
+import env from 'react-dotenv';
+
+const base_url = env.BASE_URL
 
 function renderWeeks(data) {
 
@@ -24,15 +27,41 @@ function renderWeeks(data) {
 
 
 
-function Registered({data}) {
+function Registered() {
 
 
 
-    const [achieved, setAchieved] = useState(data.achieved_targets);
-    const [comments, setComments] = useState(data.comments);
-    const [updated, setUpdated] = useState(data.updated)
+    const [achieved, setAchieved] = useState([0, 0, 0, 0]);
+    const [comments, setComments] = useState(null);
+    const [updated, setUpdated] = useState(null)
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+    const [error, setError] = useState();
     
-    
+    useEffect(() => {
+
+        const date = new Date();
+        const { googleId } = localStorage;
+
+        const url = `${base_url}/month?date=${date}&googleId=${googleId}`
+        axios.get(url).then((res) => {
+
+            console.log(res.data)
+            setData(res.data)
+            setAchieved(res.data.achieved_targets);
+            setComments(res.data.comments);
+            setUpdated(res.data.updated);
+
+        }).catch((err) => {
+            setError(err);
+        }).finally(() => {
+            console.log(data)
+            setLoading(false);
+        })
+    }, [])
+
+    if (loading) return <h1>Loading</h1>
+
     function updateTargets(index) {
         
         const newUpdated = [...updated];
@@ -41,10 +70,14 @@ function Registered({data}) {
         const date = new Date();
         const payload = {date: date, updated: newUpdated, achieved_targets: achieved, comments: comments, googleId: data.googleId}
         
-        axios.post(`http://localhost:4000/target`, payload)
+        axios.post(`${base_url}/target`, payload)
         .finally(window.location.href="dashboard")
+    }    
+
+    if (!data.updated) {
+        return <h1>Oops seems like db hasn't updated yet, try refreshing!</h1>
     }
-    
+
     return (
         <div>
             <div className="registeredHead">
@@ -85,11 +118,11 @@ function Registered({data}) {
                         }
                     }/>
                     <img className="update" src={update} onClick={() => updateTargets(row.i)}/></>)})}
-                    {(decideWeek() <5) && !renderWeeks(data).unup &&
+                    {data.updated ? (decideWeek() <5) && !renderWeeks(data).unup &&
                     <>
-                    <div className="wait">Come back next week to update</div><div></div></>}
+                    <div className="wait">Come back next week to update</div><div></div></> : <h1>Loading</h1>}
                 </div>
-                <Chart data={data} />
+                {<Chart data={data} />}
             </div>
         </div>
     )
