@@ -10,7 +10,7 @@
 
 Being productive is a very essential part of our life and keeping track of what task(s) you're doing can be a really good way to become more productivity and focusing on task at hand at a time is a very necessary thing because multitasking decreases our productivity by a landslide, even I have suffered it, it's not healthy.
 <br>
-  <I>That's exactly what accountability dashboard does</I>
+  <I>That's exactly what accountability dashboard sovles</I>
   
  Accountability Dashboard was made with idea of keeping track of Only ONE big task that one wants to achieve in a month and breaks down each month to 4 weeks, that way user don't have to input the data each week and lazy out from the whole tracking thing.
  
